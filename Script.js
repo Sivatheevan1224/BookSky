@@ -25,6 +25,10 @@ var author = document.getElementById("book-author-input")
 var description = document.getElementById("book-description-input")
 
 addbook.addEventListener("click", function(event){
+    if(!title.value|| !author.value || !description.value ){
+        alert("Fill all Details")
+    }
+    else{
     event.preventDefault()
     var div = document.createElement("div")
     div.setAttribute("class","book-container")
@@ -36,6 +40,7 @@ addbook.addEventListener("click", function(event){
     container.append(div)
     popupoverlay.style.display="none"
     popupbox.style.display="none"
+    }
 
 })
 function deletebook(event){
